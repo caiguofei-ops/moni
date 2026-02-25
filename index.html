@@ -1,70 +1,163 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moni Happy® | Official Global Portal</title>
+    <title>Moni Happy® Official | Global Website</title>
+    <meta name="description" content="The verified global portal for Moni Happy®. Registered trademark brand. Excellence in quality and premium care.">
+    
+    <link rel="preload" as="image" href="logo.webp" fetchpriority="high">
+    <link rel="canonical" href="https://monihappy.com">
+
     <style>
-        :root { --brand-blue: #228be6; }
-        body, html { 
-            height: 100%; margin: 0; 
-            /* 使用柔和的渐变色，比纯白更有高级感 */
-            background: radial-gradient(circle at center, #ffffff 0%, #f8f9fa 100%);
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            font-family: -apple-system, sans-serif;
+        :root { 
+            --brand-blue: #228be6; 
+            --success-green: #34c759;
+            --text-main: #1d1d1f;
+            --text-secondary: #86868b;
         }
 
+        body, html { 
+            height: 100%; 
+            margin: 0; 
+            background: radial-gradient(circle at center, #ffffff 0%, #f5f5f7 100%);
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 核心卡片容器 */
         .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px); /* 毛玻璃效果 */
-            padding: 50px;
-            border-radius: 32px;
-            border: 1px solid rgba(255,255,255,0.3);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 60px 40px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
             text-align: center;
-            max-width: 400px;
+            max-width: 450px;
+            width: 85%;
+            animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        /* Logo 保护壳：强力遮挡图片自带的灰色底纹 */
+        .logo-box {
+            background: #ffffff; 
+            padding: 25px;
+            border-radius: 28px;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin-bottom: 35px;
         }
 
         .main-logo {
             width: 220px;
-            /* 如果图片有格子底，我们直接给它一个白色的容器遮羞 */
-            background: #fff;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: inset 0 0 0 1px #eee;
-            margin-bottom: 30px;
+            height: auto;
+            display: block;
         }
 
-        .verified-badge {
+        /* 顶部认证勋章 */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             font-size: 12px;
-            font-weight: bold;
-            color: #34c759;
+            font-weight: 700;
+            color: var(--success-green);
             background: rgba(52, 199, 89, 0.1);
-            padding: 5px 15px;
-            border-radius: 20px;
+            padding: 6px 16px;
+            border-radius: 50px;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
         }
 
-        .domain-info {
-            margin-top: 25px;
-            font-size: 18px;
-            font-weight: 600;
+        /* 文字层级优化，彻底解决重叠 */
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            margin: 0 0 15px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .domain-display {
+            font-size: 20px;
+            font-weight: 700;
             color: var(--brand-blue);
+            margin: 15px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .tagline {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8; /* 核心：增加行高防止重叠 */
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+
+        /* 页脚法律声明 */
+        footer {
+            margin-top: 60px; /* 增加与卡片的间距 */
+            text-align: center;
+            font-size: 11px;
+            color: #adb5bd;
+            line-height: 1.8;
+            max-width: 80%;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 480px) {
+            .glass-card { padding: 40px 25px; }
+            h1 { font-size: 24px; }
         }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Brand",
+      "name": "Moni Happy",
+      "url": "https://monihappy.com",
+      "logo": "https://monihappy.com/logo.webp",
+      "identifier": "YOUR_TRADEMARK_NUMBER",
+      "sameAs": ["https://www.facebook.com/MoniHappyBabyDiaper"]
+    }
+    </script>
 </head>
 <body>
 
     <div class="glass-card">
-        <div style="margin-bottom: 15px;"><span class="verified-badge">✓ Official Trademark Site</span></div>
-        <img src="logo.webp" alt="Moni Happy" class="main-logo">
-        <div style="font-size: 24px; font-weight: 800; letter-spacing: -0.5px;">Moni Happy®</div>
-        <div class="domain-info">monihappy.com</div>
-        <p style="color: #86868b; font-size: 14px; margin-top: 15px;">Pure Care. Pure Happiness.</p>
+        <div><span class="badge">✓ Official Trademark Site</span></div>
+        
+        <div class="logo-box">
+            <img src="logo.webp" alt="Moni Happy" class="main-logo" fetchpriority="high">
+        </div>
+
+        <h1>Moni Happy<sup>®</sup></h1>
+        
+        <div class="domain-display">monihappy.com</div>
+        
+        <div class="tagline">
+            Excellence in Quality. <br>
+            Global Recognition for Premium Care.
+        </div>
     </div>
 
-    <footer style="position: absolute; bottom: 30px; font-size: 11px; color: #adb5bd; text-align: center;">
-        © 2026 Moni Happy Brand. All Rights Reserved.
+    <footer>
+        <p><strong>LEGAL NOTICE:</strong> Moni Happy® is a legally registered trademark. <br>
+        <strong>monihappy.com</strong> is the exclusive official portal. <br>
+        Unauthorized use of this brand on other domains (including moni-happy.com) is prohibited.</p>
+        <p>&copy; 2026 Moni Happy Brand. All Rights Reserved.</p>
     </footer>
 
 </body>
